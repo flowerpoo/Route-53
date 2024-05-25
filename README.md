@@ -11,7 +11,7 @@ Let us see how we configure disaster recovery scenario using route53.
 
 # Step 1: Check your applications running in two regions
 
-* Created 2 EC2 instance in 2 different region and install nginx server on both make sure then are up and running fine.
+* Created 2 EC2 instance in 2 different region and install nginx server on both make sure they are up and running fine.
  * 1st EC2 instance web1 launched in N.virginia region
 ![alt text](<imgs/1st instance launch.PNG>)
 output:
@@ -103,6 +103,7 @@ We will simulate a failure by manually stopping the instance in your primary reg
 * Click Health checks.
 * Select check-1 and click the Health checkers tab
 * Wait until the status of check-1 is Unhealthy. If necessary, periodically click the refresh icon in the top-right corner.
+
 ![alt text](<imgs/unhealthy health check.PNG>)
 
 * The Health Check has now detected that your Primary web server has stopped responding.
@@ -114,6 +115,7 @@ Test the fail-over
 * Click your domain name.
 * In Check response from Route 53, configure the following settings as shown in image
 * Click on Get Response and you can see Response returned by Route53 which is now pointing to secondary web server
+
 ![alt text](<imgs/2nd ip response.PNG>)
 
 output with domain name.
